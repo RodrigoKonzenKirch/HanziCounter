@@ -1,6 +1,14 @@
 package com.example.hanzicounter.viewmodels
 
-class TextReadModeViewModel {
+import androidx.lifecycle.ViewModel
+import com.example.hanzicounter.domain.TextRepository
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
+
+@HiltViewModel
+class TextReadModeViewModel @Inject constructor(
+    private val repository: TextRepository
+): ViewModel() {
 
     // get/observe text
 
