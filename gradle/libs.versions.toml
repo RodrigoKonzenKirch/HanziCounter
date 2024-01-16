@@ -6,12 +6,15 @@ core-ktx = "1.12.0"
 espressoCore = "3.5.1"
 hilt-android = "2.48.1"
 junit = "4.13.2"
+kotlinxCoroutinesTest = "1.7.1"
 lifecycle-runtime-ktx = "2.6.2"
+mockk = "1.13.8"
 roomVersion = "2.6.1"
 composeBom = "2023.03.00"
 kotlin = "1.9.20"
 androidGradlePlugin = "8.2.0"
 ksp = "1.9.20-1.0.14"
+truth = "1.1.4"
 
 [libraries]
 
@@ -34,6 +37,9 @@ compose-material3 = { module = "androidx.compose.material3:material3" }
 compose-ui-test-junit4 = { module = "androidx.compose.ui:ui-test-junit4" }
 compose-ui-tooling = { module = "androidx.compose.ui:ui-tooling" }
 compose-ui-test-manifest = { module = "androidx.compose.ui:ui-test-manifest" }
+kotlinx-coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "kotlinxCoroutinesTest" }
+mockk = { module = "io.mockk:mockk", version.ref = "mockk" }
+truth = { module = "com.google.truth:truth", version.ref = "truth" }
 
 [plugins]
 
