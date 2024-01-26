@@ -6,7 +6,7 @@ import javax.inject.Inject
 
 class TextRepositoryImpl @Inject constructor(private val textDao: TextDao) : TextRepository {
     private val currentTextTitle = "current"
-    override suspend fun getCurrentText(): Flow<Text> {
+    override suspend fun currentText(): Flow<Text> {
         return textDao.getTextByTitle(currentTextTitle)
     }
 

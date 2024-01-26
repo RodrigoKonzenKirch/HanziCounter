@@ -30,7 +30,7 @@ class TextRepositoryImplTest {
 
         every { textDao.getTextByTitle("current") } returns flowOf(expectedText)
 
-        val actualText = repository.getCurrentText().first()
+        val actualText = repository.currentText().first()
 
         assertThat(actualText).isEqualTo(expectedText)
 
