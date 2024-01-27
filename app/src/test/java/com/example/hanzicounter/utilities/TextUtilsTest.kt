@@ -7,7 +7,7 @@ import androidx.compose.ui.text.withStyle
 import com.google.common.truth.Truth.assertThat
 import org.junit.Test
 
-class TextUtils {
+class TextUtilsTest {
 
     @Test
     fun `highlight single character`() {
@@ -68,4 +68,30 @@ class TextUtils {
         val actual = highlightChars(text, charToHighlight, Color.Blue, Color.LightGray)
         assertThat(actual).isEqualTo(expected)
     }
+
+    @Test
+    fun `count characters in simple string`() {
+        val text = "simple"
+        val expected = listOf('s' to 1, 'i' to 1, 'm' to 1, 'p' to 1, 'l' to 1, 'e' to 1)
+        val actual = text.countCharactersOccurrences()
+        assertThat(actual).isEqualTo(expected)
+    }
+
+    @Test
+    fun `count characters with duplicates`() {
+        val text = "abbbcc"
+        val expected = listOf('a' to 1, 'b' to 3, 'c' to 2)
+        val actual = text.countCharactersOccurrences()
+        assertThat(actual).isEqualTo(expected)
+    }
+
+    @Test
+    fun `empty string should return empty list of Pair of Char and Int`() {
+        val text = ""
+        val expected = emptyList<Pair<Char, Int>>()
+        val actual = text.countCharactersOccurrences()
+        assertThat(actual).isEqualTo(expected)
+
+    }
+
 }

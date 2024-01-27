@@ -32,3 +32,16 @@ fun highlightChars(text: String, charToHighlight: Char, color: Color, background
     }
     return annotatedString
 }
+
+/**
+ * Counts the occurrences of each unique character in the string and returns a list of character-count pairs.
+ *
+ * @return A list of pairs, where each pair contains a unique character from the string and its corresponding count.
+ */
+fun String.countCharactersOccurrences(): List<Pair<Char, Int>> {
+    val characterCounts = mutableMapOf<Char, Int>()
+    for (char in this) {
+        characterCounts[char] = characterCounts.getOrDefault(char, 0) + 1
+    }
+    return characterCounts.toList()
+}
