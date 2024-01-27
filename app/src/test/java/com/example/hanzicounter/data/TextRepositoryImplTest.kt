@@ -33,8 +33,6 @@ class TextRepositoryImplTest {
         val actualText = repository.currentText().first()
 
         assertThat(actualText).isEqualTo(expectedText)
-
-
     }
 
     @OptIn(ExperimentalCoroutinesApi::class)
