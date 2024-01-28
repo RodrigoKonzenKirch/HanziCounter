@@ -94,4 +94,46 @@ class TextUtilsTest {
 
     }
 
+    @Test
+    fun `filters chinese characters`() {
+        val input = "你好，世界！Hello, World!"
+        val expected = "你好世界"
+        assertThat(input.filterChineseJapaneseCharacters()).isEqualTo(expected)
+    }
+
+    @Test
+    fun `filters japanese characters`() {
+        val input = "こんにちは、世界！Hello, World!"
+        val expected = "こんにちは世界"
+        assertThat(input.filterChineseJapaneseCharacters()).isEqualTo(expected)
+    }
+
+    @Test
+    fun `filters mixed chinese and japanese characters`() {
+        val input = "你好こんにちは、世界！Hello, World!"
+        val expected = "你好こんにちは世界"
+        assertThat(input.filterChineseJapaneseCharacters()).isEqualTo(expected)
+    }
+
+    @Test
+    fun `empty parameter should return empty string`() {
+        val input = ""
+        val expected = ""
+        assertThat(input.filterChineseJapaneseCharacters()).isEqualTo(expected)
+    }
+
+    @Test
+    fun `handles string with only non chinese japanese characters`() {
+        val input = "Hello, World! #$%& 135"
+        val expected = ""
+        assertThat(input.filterChineseJapaneseCharacters()).isEqualTo(expected)
+    }
+
+    @Test
+    fun `handles string with whitespace`() {
+        val input = " 你好  こんにちは  世界！  "
+        val expected = "你好こんにちは世界"
+        assertThat(input.filterChineseJapaneseCharacters()).isEqualTo(expected)
+    }
+
 }

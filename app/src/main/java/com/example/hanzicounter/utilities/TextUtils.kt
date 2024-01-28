@@ -45,3 +45,14 @@ fun String.countCharactersOccurrences(): List<Pair<Char, Int>> {
     }
     return characterCounts.toList()
 }
+
+/**
+ * Filters a string to retain only Chinese and Japanese characters, removing punctuation,
+ * special characters, and other non-Chinese/Japanese text.
+ *
+ * @return A new string containing only Chinese and Japanese characters.
+ */
+fun String.filterChineseJapaneseCharacters(): String {
+    val pattern = Regex("[^\u4e00-\u9fa5\u3040-\u309f\u30a0-\u30ff\u3400-\u4dbf]+")
+    return pattern.replace(this, "")
+}
