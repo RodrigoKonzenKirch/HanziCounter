@@ -1,11 +1,15 @@
 package com.example.hanzicounter.viewmodels
 
+import androidx.compose.runtime.MutableState
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.AnnotatedString
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.hanzicounter.di.DispatcherIo
 import com.example.hanzicounter.domain.TextRepository
+import com.example.hanzicounter.utilities.countCharactersOccurrences
+import com.example.hanzicounter.utilities.filterChineseJapaneseCharacters
 import com.example.hanzicounter.utilities.highlightChars
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineDispatcher
@@ -26,16 +30,29 @@ class TextReadModeViewModel @Inject constructor(
     private val _highlightedText = MutableStateFlow(AnnotatedString(""))
     val highlightedText: StateFlow<AnnotatedString> = _highlightedText
 
+    private val _charsAndCounter = MutableStateFlow<List<Pair<Char, Int>>>(emptyList())
+    val charsAndCounter: StateFlow<List<Pair<Char, Int>>> = _charsAndCounter
+
     init {
-        viewModelScope.launch{
-            repository.currentText().collect {text ->
+        viewModelScope.launch(dispatcherIo){
+            repository.currentText().collect { text ->
                 if (text.content.isNotBlank()){
                     _highlightedText.value = highlightChars(text.content, _charToHighlight.value, Color.Blue, Color.LightGray)
+                    _charsAndCounter.value = text.content
+                        .filterChineseJapaneseCharacters()
+                        .countCharactersOccurrences()
+                        .sortedByDescending { it.second }
                 } else {
                     _highlightedText.value = AnnotatedString("")
                 }
             }
         }
+    }
+
+    fun highlightChar(char: Char){
+        setCharToHighlight(char)
+
+        _highlightedText.value = highlightChars(highlightedText.value.toString(), _charToHighlight.value, Color.Blue, Color.LightGray)
     }
 
     fun setCharToHighlight(charToHighlight: Char){

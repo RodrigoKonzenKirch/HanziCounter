@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Hanzi Counter</string>
+    <string name="button_hide_hanzi_counter">Hide Hanzi Counter</string>
+    <string name="button_show_hanzi_counter">Show Hanzi Counter</string>
 </resources>
