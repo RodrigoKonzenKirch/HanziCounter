@@ -5,6 +5,7 @@ androidx-junit = "1.1.5"
 core-ktx = "1.12.0"
 espressoCore = "3.5.1"
 hilt-android = "2.48.1"
+hiltAndroidTesting = "2.48"
 hiltNavigationCompose = "1.1.0"
 junit = "4.13.2"
 kotlinxCoroutinesTest = "1.7.1"
@@ -17,6 +18,8 @@ composeBom = "2023.03.00"
 kotlin = "1.9.20"
 androidGradlePlugin = "8.2.0"
 ksp = "1.9.20-1.0.14"
+runner = "1.5.2"
+rules = "1.5.0"
 truth = "1.1.4"
 
 [libraries]
@@ -30,10 +33,15 @@ androidx-lifecycle-runtime-compose = { module = "androidx.lifecycle:lifecycle-ru
 androidx-lifecycle-runtime-ktx = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "lifecycle-runtime-ktx" }
 androidx-lifecycle-viewmodel-compose = { module = "androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "lifecycleViewmodelCompose" }
 androidx-navigation-compose = { module = "androidx.navigation:navigation-compose", version.ref = "navigationCompose" }
+androidx-navigation-testing = { module = "androidx.navigation:navigation-testing", version.ref = "navigationCompose" }
 androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "roomVersion" }
 androidx-room-ktx = { module = "androidx.room:room-ktx", version.ref = "roomVersion" }
 androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "roomVersion" }
+androidx-rules = { module = "androidx.test:rules", version.ref = "rules" }
+androidx-runner = { module = "androidx.test:runner", version.ref = "runner" }
 hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hilt-android" }
+hilt-android-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "hiltAndroidTesting" }
+hilt-android-testing = { module = "com.google.dagger:hilt-android-testing", version.ref = "hiltAndroidTesting" }
 hilt-compiler = { module = "com.google.dagger:hilt-compiler", version.ref = "hilt-android" }
 junit = { module = "junit:junit", version.ref = "junit" }
 compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }

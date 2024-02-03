@@ -18,8 +18,11 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.testTag
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
+import com.example.hanzicounter.R
 import com.example.hanzicounter.viewmodels.TextWriteModeViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -64,7 +67,9 @@ fun TextWriteModeScreen(
         }
     ) { innerPadding ->
         Column(
-            modifier.padding(innerPadding)
+            modifier
+                .padding(innerPadding)
+                .testTag(stringResource(R.string.write_screen_tag))
         ) {
             TextField(
                 value = value,
