@@ -4,5 +4,7 @@ package com.example.hanzicounter.utilities
  * Constants used throughout the app.
  */
 
-const val INVALID_CHARS = "１２３４５６７８９０1234567890\n\r\"\'“”あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわゐゔゑをんがぎぐげござじずぜぞだぢづでどばびぶべぼぱぴぷぺぽゃゅょっアイウエオャュョッァィェゥォヵヶカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヰヱヲヰンガギグゲゴザジズゼゾダヂヅデドバビブベボパピプペポヴ｛｝{}（）()［］【】[]&,.;:/-+×÷、，゠＝=…‥。「」『』《》〝〟⟨⟩〜：！!？?＿＠＃＄％%∟°＆＊・•~^ー 　"
+object Constants {
+    const val DATABASE_NAME = "app_database"
+}
 

@@ -10,6 +10,7 @@ import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
+import com.example.hanzicounter.utilities.Constants.DATABASE_NAME
 
 @Module
 @InstallIn(SingletonComponent::class)
@@ -23,7 +24,7 @@ object DataModule {
         return Room.databaseBuilder(
             appContext,
             AppDatabase::class.java,
-            "app_database"
+            DATABASE_NAME
         ).build()
     }
 
