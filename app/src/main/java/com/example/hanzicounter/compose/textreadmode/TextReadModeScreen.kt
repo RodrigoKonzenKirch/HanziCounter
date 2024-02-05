@@ -11,6 +11,8 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
+import androidx.compose.foundation.selection.selectable
+import androidx.compose.foundation.text.selection.SelectionContainer
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Edit
 import androidx.compose.material3.BottomAppBar
@@ -95,8 +97,10 @@ fun TextReadModeScreen(
 
 @Composable
 fun TextContent(text: AnnotatedString, modifier: Modifier) {
-    Column(modifier.padding(8.dp)) {
-        Text(text = text)
+    SelectionContainer(modifier.padding(8.dp)) {
+        Column {
+            Text(text = text)
+        }
     }
 }
 
