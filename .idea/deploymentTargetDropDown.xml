@@ -8,6 +8,9 @@
       <entry key="appNavHost_verifyStartDestination()">
         <State />
       </entry>
+      <entry key="navigateFromReadModeToWriteMode_WhenClickCancelButtonShouldReturnToReadMode()">
+        <State />
+      </entry>
       <entry key="navigateToWriteModeScreen()">
         <State />
       </entry>

@@ -6,6 +6,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
 import androidx.compose.ui.test.onNodeWithContentDescription
 import androidx.compose.ui.test.onNodeWithTag
+import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performClick
 import androidx.navigation.compose.ComposeNavigator
 import androidx.navigation.testing.TestNavHostController
@@ -48,4 +49,11 @@ class NavigationTest {
         composeTestRule.onNodeWithTag("Write Screen").assertExists()
     }
 
+    @Test
+    fun navigateFromReadModeToWriteMode_WhenClickCancelButtonShouldReturnToReadMode() {
+        composeTestRule.onNodeWithContentDescription("Edit Text").performClick()
+        composeTestRule.onNodeWithText("Cancel").performClick()
+        composeTestRule.onNodeWithTag("Read Screen").assertExists()
+
+    }
 }
