@@ -11,7 +11,6 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
-import androidx.compose.foundation.selection.selectable
 import androidx.compose.foundation.text.selection.SelectionContainer
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Edit
@@ -31,7 +30,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.AnnotatedString
+import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.example.hanzicounter.R
@@ -79,7 +80,7 @@ fun TextReadModeScreen(
                 .testTag(stringResource(R.string.read_screen_tag))
         ) {
 
-            TextContent(text.value, Modifier.weight(1f))
+            TextContent(text.value, 20.sp, Modifier.weight(1f))
             if (showCounter.value){
                 TextCounter(
                     charactersAndCounters.value,
@@ -96,10 +97,13 @@ fun TextReadModeScreen(
 }
 
 @Composable
-fun TextContent(text: AnnotatedString, modifier: Modifier) {
+fun TextContent(text: AnnotatedString, fontSize: TextUnit, modifier: Modifier) {
     SelectionContainer(modifier.padding(8.dp)) {
         Column {
-            Text(text = text)
+            Text(
+                text = text,
+                fontSize = fontSize
+            )
         }
     }
 }
