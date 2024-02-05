@@ -45,20 +45,20 @@ fun TextWriteModeScreen(
                     Button(
                         onClick = { viewModel.saveText(value) }
                     ) {
-                        Text(text = "Save")
+                        Text(text = stringResource(R.string.button_save))
                     }
                     Button(
                         onClick = { value = viewModel.getCurrentText() }
                     ) {
-                        Text(text = "Load current text")
+                        Text(text = stringResource(R.string.button_load_current_text))
                     }
                     Button(
                         onClick = { value = "" }
                     ) {
-                        Text(text = "Clear")
+                        Text(text = stringResource(R.string.button_clear))
                     }
                     Button(onClick = onNavigateBack ) {
-                        Text(text = "Cancel")
+                        Text(text = stringResource(R.string.button_cancel))
                     }
 
                 }

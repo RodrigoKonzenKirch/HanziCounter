@@ -57,7 +57,7 @@ fun TextReadModeScreen(
             BottomAppBar {
                 Row {
                     Button(onClick = onNavigateToTextWriteScreen) {
-                        Icon(Icons.Outlined.Edit, "Edit Text" )
+                        Icon(Icons.Outlined.Edit, stringResource(R.string.button_edit_text) )
                     }
                 }
                 OutlinedButton(
