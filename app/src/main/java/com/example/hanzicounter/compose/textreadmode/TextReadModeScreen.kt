@@ -90,9 +90,7 @@ fun TextReadModeScreen(
                     }
                 )
             }
-
         }
-
     }
 }
 
@@ -111,7 +109,7 @@ fun TextContent(text: AnnotatedString, fontSize: TextUnit, modifier: Modifier) {
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun TextCounter(
-    charsNCounts: List<Pair<Char, Int>>,
+    charsCountersPair: List<Pair<Char, Int>>,
     modifier: Modifier,
     onUpdateCharToHighlight: (char: Char) -> Unit
 ) {
@@ -123,7 +121,7 @@ fun TextCounter(
         modifier = modifier.padding(8.dp)
 
     ){
-        items(charsNCounts) {charNCount ->
+        items(charsCountersPair) { charNCount ->
             Card(
                 onClick = { onUpdateCharToHighlight(charNCount.first) },
                 elevation = CardDefaults.cardElevation(defaultElevation = 8.dp)
@@ -141,5 +139,4 @@ fun TextCounter(
             }
         }
     }
-
 }
