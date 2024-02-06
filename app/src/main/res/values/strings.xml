@@ -9,4 +9,5 @@
     <string name="button_load_current_text">Load current text</string>
     <string name="button_save">Save</string>
     <string name="button_edit_text">Edit Text</string>
+    <string name="snackbar_text_saved">Text saved!</string>
 </resources>

@@ -2,22 +2,22 @@
 <project version="4">
   <component name="deploymentTargetDropDown">
     <value>
-      <entry key="app">
+      <entry key="NavigationTest">
         <State />
       </entry>
-      <entry key="appNavHost_verifyStartDestination()">
+      <entry key="TextWriteModeScreenKtTest">
+        <State />
+      </entry>
+      <entry key="app">
         <State />
       </entry>
       <entry key="navigateFromReadModeToWriteMode_WhenClickCancelButtonShouldReturnToReadMode()">
         <State />
       </entry>
-      <entry key="navigateToWriteModeScreen()">
+      <entry key="whenClearButtonIsClicked_ClearsTheTextOfTextField()">
         <State />
       </entry>
-      <entry key="screenElementsAreShowingCorrectly()">
-        <State />
-      </entry>
-      <entry key="test()">
+      <entry key="whenClickCancelButton_ThenNavigateBackToReadModeScreen()">
         <State />
       </entry>
     </value>
