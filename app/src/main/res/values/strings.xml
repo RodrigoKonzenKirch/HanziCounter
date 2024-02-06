@@ -2,8 +2,8 @@
     <string name="app_name">Hanzi Counter</string>
     <string name="button_hide_hanzi_counter">Hide Hanzi Counter</string>
     <string name="button_show_hanzi_counter">Show Hanzi Counter</string>
-    <string name="write_screen_tag">Write Screen</string>
-    <string name="read_screen_tag">Read Screen</string>
+    <string name="write_screen_tag">write_screen</string>
+    <string name="read_screen_tag">read_screen</string>
     <string name="button_cancel">Cancel</string>
     <string name="button_clear">Clear</string>
     <string name="button_load_current_text">Load current text</string>

@@ -39,21 +39,22 @@ class NavigationTest {
     @Test
     fun appNavHost_verifyStartDestination(){
 
-        composeTestRule.onNodeWithTag("Read Screen")
+        composeTestRule.onNodeWithTag("read_screen")
             .assertExists()
     }
 
     @Test
     fun navigateFromReadModeToWriteModeScreen() {
         composeTestRule.onNodeWithContentDescription("Edit Text").performClick()
-        composeTestRule.onNodeWithTag("Write Screen").assertExists()
+        composeTestRule.onNodeWithTag("write_screen").assertExists()
     }
 
     @Test
     fun navigateFromReadModeToWriteMode_WhenClickCancelButtonShouldReturnToReadMode() {
+        composeTestRule.onNodeWithTag("read_screen").assertExists()
         composeTestRule.onNodeWithContentDescription("Edit Text").performClick()
+        composeTestRule.onNodeWithTag("read_screen").assertDoesNotExist()
         composeTestRule.onNodeWithText("Cancel").performClick()
-        composeTestRule.onNodeWithTag("Read Screen").assertExists()
-
+        composeTestRule.onNodeWithTag("read_screen").assertExists()
     }
 }

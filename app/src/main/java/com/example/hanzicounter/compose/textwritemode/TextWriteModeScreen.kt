@@ -83,7 +83,7 @@ fun TextWriteModeScreen(
             TextField(
                 value = value,
                 onValueChange = { value = it },
-                modifier = Modifier.fillMaxSize()
+                modifier = Modifier.fillMaxSize().testTag("write_mode_edit_text")
             )
         }
     }
