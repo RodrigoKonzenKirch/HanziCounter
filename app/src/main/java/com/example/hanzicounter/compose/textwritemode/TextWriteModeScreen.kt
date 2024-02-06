@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.BottomAppBar
 import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
@@ -55,12 +56,12 @@ fun TextWriteModeScreen(
                     ) {
                         Text(text = stringResource(R.string.button_save))
                     }
-                    Button(
+                    OutlinedButton(
                         onClick = { value = viewModel.getCurrentText() }
                     ) {
                         Text(text = stringResource(R.string.button_load_current_text))
                     }
-                    Button(
+                    OutlinedButton(
                         onClick = { value = "" }
                     ) {
                         Text(text = stringResource(R.string.button_clear))
