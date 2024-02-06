@@ -38,23 +38,31 @@ class NavigationTest {
 
     @Test
     fun appNavHost_verifyStartDestination(){
+        val readScreenTag = composeTestRule.activity.getString(R.string.read_screen_tag)
 
-        composeTestRule.onNodeWithTag("read_screen")
+        composeTestRule.onNodeWithTag(readScreenTag)
             .assertExists()
     }
 
     @Test
     fun navigateFromReadModeToWriteModeScreen() {
-        composeTestRule.onNodeWithContentDescription("Edit Text").performClick()
-        composeTestRule.onNodeWithTag("write_screen").assertExists()
+        val writeScreenTag = composeTestRule.activity.getString(R.string.write_screen_tag)
+        val readModeEditText = composeTestRule.activity.getString(R.string.button_edit_text)
+
+        composeTestRule.onNodeWithContentDescription(readModeEditText).performClick()
+        composeTestRule.onNodeWithTag(writeScreenTag).assertExists()
     }
 
     @Test
     fun navigateFromReadModeToWriteMode_WhenClickCancelButtonShouldReturnToReadMode() {
-        composeTestRule.onNodeWithTag("read_screen").assertExists()
-        composeTestRule.onNodeWithContentDescription("Edit Text").performClick()
-        composeTestRule.onNodeWithTag("read_screen").assertDoesNotExist()
-        composeTestRule.onNodeWithText("Cancel").performClick()
-        composeTestRule.onNodeWithTag("read_screen").assertExists()
+        val readScreenTag = composeTestRule.activity.getString(R.string.read_screen_tag)
+        val buttonTextCancel = composeTestRule.activity.getString(R.string.button_cancel)
+        val readModeEditText = composeTestRule.activity.getString(R.string.button_edit_text)
+
+        composeTestRule.onNodeWithTag(readScreenTag).assertExists()
+        composeTestRule.onNodeWithContentDescription(readModeEditText).performClick()
+        composeTestRule.onNodeWithTag(readScreenTag).assertDoesNotExist()
+        composeTestRule.onNodeWithText(buttonTextCancel).performClick()
+        composeTestRule.onNodeWithTag(readScreenTag).assertExists()
     }
 }
