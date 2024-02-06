@@ -12,6 +12,7 @@ import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
+import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -37,6 +38,13 @@ fun TextWriteModeScreen(
     val viewModel = hiltViewModel<TextWriteModeViewModel>()
 
     Scaffold(
+        topBar = {
+                 TopAppBar(
+                     title = {
+                        Text(text = "Edit or Add new text")
+                     }
+                 )
+        },
         bottomBar = {
             BottomAppBar {
                 Row(
