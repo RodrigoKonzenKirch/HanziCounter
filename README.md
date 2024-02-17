@@ -15,3 +15,4 @@ Example with Chinese text:
 This project uses the following technologies:
 
     MVVM + Compose + Navigation + Hilt + Coroutine + Room + Compose navigation
+    Tests use: JUnit4 + Mockk + Truth
