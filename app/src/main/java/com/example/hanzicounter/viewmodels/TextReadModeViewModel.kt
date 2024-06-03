@@ -47,12 +47,22 @@ class TextReadModeViewModel @Inject constructor(
         }
     }
 
+    /**
+     * Highlights the given character in the current text.
+     *
+     * @param char The character to highlight.
+     */
     fun highlightChar(char: Char){
         setCharToHighlight(char)
 
         _highlightedText.value = highlightChars(highlightedText.value.toString(), _charToHighlight.value, Color.Blue, Color.LightGray)
     }
 
+    /**
+     * Sets the character to highlight.
+     *
+     * @param charToHighlight The character to highlight.
+     */
     fun setCharToHighlight(charToHighlight: Char){
         _charToHighlight.value = charToHighlight
     }

@@ -26,10 +26,16 @@ class TextWriteModeViewModel @Inject constructor(
         }
     }
 
+    /**
+     * @return current text
+     */
     fun getCurrentText(): String {
         return _currentText.value
     }
 
+    /**
+     * @param newText new text to save
+     */
     fun saveText(newText: String) {
         viewModelScope.launch(dispatcherIo) {
             repository.updateCurrentText(newText)
