@@ -21,7 +21,9 @@ class TextWriteModeViewModel @Inject constructor(
     init {
         viewModelScope.launch(dispatcherIo) {
             repository.currentText().collect { text ->
-                _currentText.value = text.content
+                if (text != null){
+                    _currentText.value = text.content
+                }
             }
         }
     }

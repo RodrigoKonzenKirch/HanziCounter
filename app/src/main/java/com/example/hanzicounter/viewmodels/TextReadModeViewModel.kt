@@ -34,7 +34,7 @@ class TextReadModeViewModel @Inject constructor(
     init {
         viewModelScope.launch(dispatcherIo){
             repository.currentText().collect { text ->
-                if (text.content.isNotBlank()){
+                if (text != null && text.content.isNotBlank()){
                     _highlightedText.value = highlightChars(text.content, _charToHighlight.value, Color.Blue, Color.LightGray)
                     _charsAndCounter.value = text.content
                         .filterChineseJapaneseCharacters()
