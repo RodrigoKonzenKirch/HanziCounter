@@ -79,14 +79,15 @@ fun TextReadModeScreen(
             modifier
                 .fillMaxSize()
                 .padding(innerPadding)
-                .testTag(stringResource(R.string.read_screen_tag))
+                .testTag(stringResource(R.string.read_screen_tag)),
+            verticalArrangement = Arrangement.SpaceEvenly
         ) {
 
             TextContent(text.value, 20.sp, Modifier.weight(1f))
             if (showCounter.value){
                 TextCounter(
-                    charactersAndCounters.value,
-                    Modifier.weight(1f),
+                    charsCountersPair = charactersAndCounters.value,
+                    modifier = Modifier.weight(1f),
                     onUpdateCharToHighlight = { charToHighlight ->
                         viewModel.highlightChar(charToHighlight)
                     }
@@ -119,10 +120,10 @@ fun TextCounter(
 ) {
 
     LazyVerticalGrid(
+        modifier = modifier,
         columns = GridCells.Adaptive(minSize = 80.dp),
         horizontalArrangement = Arrangement.spacedBy(4.dp),
         verticalArrangement = Arrangement.spacedBy(4.dp),
-        modifier = modifier.padding(8.dp)
 
     ){
         items(charsCountersPair) { charNCount ->
